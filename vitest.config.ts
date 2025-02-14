@@ -1,23 +1,31 @@
 import { defineConfig } from 'vitest/config'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
-const baseConfig = {
+const rootBaseConfig = {
     plugins: [tsconfigPaths()],
+}
+
+const testBaseConfig = {
+    coverage: {
+        provider: 'v8',
+    },
 }
 
 export default defineConfig({
     test: {
         workspace: [
             {
-                ...baseConfig,
+                ...rootBaseConfig,
                 test: {
+                    ...testBaseConfig,
                     name: 'unit',
                     include: ['src/**/*.spec.ts'],
                 },
             },
             {
-                ...baseConfig,
+                ...rootBaseConfig,
                 test: {
+                    ...testBaseConfig,
                     name: 'integration',
                     include: ['test/**/*.spec.ts'],
                 },
