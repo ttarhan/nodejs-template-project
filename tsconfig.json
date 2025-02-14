@@ -1,8 +1,8 @@
 {
   "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
+    "rootDir": ".",
     "baseUrl": "src",
-    "rootDir": "src",
     "outDir": "dist",
     "module": "node16",
     "moduleResolution": "node16",
@@ -14,7 +14,18 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "composite": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "paths": {
+      "@/*": ["*"]
+    }
   },
-  "include": ["src/**/*.ts"]
+  "tsc-alias": {
+    "replacers": {
+      "base-url": {
+        "enabled": false
+      }
+    }
+  },
+  "include": ["src", "test", "vitest.*.ts"],
+  "exclude": ["dist", "node_modules"]
 }

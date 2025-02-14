@@ -2,6 +2,12 @@ module.exports = {
     root: true,
     plugins: ['@typescript-eslint'],
 
+    settings: {
+        'import/resolver': {
+            typescript: {},
+        },
+    },
+
     extends: [
         'airbnb-base',
         'airbnb-typescript/base',
@@ -36,6 +42,12 @@ module.exports = {
         'jsdoc/require-param-type': 'off',
         'jsdoc/require-returns-type': 'off',
         'import/no-unresolved': 'off',
+        'import/no-extraneous-dependencies': [
+            'error',
+            {
+                devDependencies: ['**/*.spec.ts', './vitest.*.ts'],
+            },
+        ],
     },
 
     parser: '@typescript-eslint/parser',
