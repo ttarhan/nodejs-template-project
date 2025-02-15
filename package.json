@@ -8,10 +8,12 @@
   ],
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
+    "@types/download": "^8",
     "@types/node": "^22.13.2",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "@vitest/coverage-v8": "^3.0.5",
+    "download": "^8.0.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^10.0.1",
